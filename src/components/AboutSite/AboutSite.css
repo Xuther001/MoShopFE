@@ -8,7 +8,7 @@
     cursor: pointer;
     text-align: center;
     line-height: 1.5;
-    margin-top: 20px; /* Add some spacing from the auth buttons */
+    margin-top: 20px;
   }
   
   .about-site-button:hover {

@@ -11,18 +11,14 @@
   display: flex;
   gap: 10px;
   z-index: 1000;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  align-items: center;
 }
 
-.signup-link,
-.login-link,
-.logout-button,
-.mycart-button, 
-.myinvoice-button, 
-.myprofile-button {
-  display: inline-block;
-  padding: 12px;
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
@@ -30,11 +26,7 @@
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  text-align: center;
-  line-height: 1.5;
-  width: auto;
-  max-width: 180px;
-  margin-bottom: 10px;
+  min-width: 120px;
 }
 
 .logout-button {
@@ -47,8 +39,7 @@
   background-color: #008CBA;
 }
 
-.signup-link:hover,
-.login-link:hover {
+.button:hover {
   background-color: #45a049;
 }
 
@@ -84,23 +75,10 @@
     padding: 5px;
   }
 
-  .auth-buttons {
-    top: 5px;
-    right: 5px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .signup-link,
-  .login-link,
-  .logout-button,
-  .mycart-button,
-  .myinvoice-button,
-  .myprofile-button {
+  .button {
     font-size: 12px;
-    padding: 8px;
-    max-width: 150px;
+    padding: 8px 12px;
+    min-width: 100px;
   }
 
   .footwear-item {
@@ -109,15 +87,10 @@
 }
 
 @media (max-width: 480px) {
-  .signup-link,
-  .login-link,
-  .logout-button,
-  .mycart-button,
-  .myinvoice-button,
-  .myprofile-button {
+  .button {
     font-size: 10px;
-    padding: 6px;
-    max-width: 120px;
+    padding: 6px 10px;
+    min-width: 80px;
   }
 
   .footwear-item {
