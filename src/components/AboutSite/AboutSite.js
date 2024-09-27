@@ -60,6 +60,25 @@ const AboutSite = () => {
         <li>Users who have already reviewed a product will not have the option to review it again.</li>
         <li>Submitted reviews will appear immediately under the Customer Reviews section.</li>
       </ul>
+
+      <h2>Explore the Site</h2>
+      <p>
+        For your convenience, here is an already registered account for you to explore the site with:
+      </p>
+      <ul>
+        <li><strong>Username:</strong> Maiev</li>
+        <li><strong>Password:</strong> 1111</li>
+      </ul>
+
+      <h2>Tech Stack</h2>
+      <p>
+        Tech stack used to build this website:
+      </p>
+      <ul>
+        <li><strong>Frontend:</strong> JavaScript, React.js</li>
+        <li><strong>Backend:</strong> Java, Spring Boot, PostgreSQL</li>
+        <li><strong>Deployment:</strong> AWS RDS, AWS S3, AWS EC2</li>
+      </ul>
     </div>
   );
 };
