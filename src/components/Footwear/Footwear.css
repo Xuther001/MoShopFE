@@ -7,12 +7,19 @@
     margin: 0 auto;
 }
 
+.loading {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+}
+
 .product-list {
     margin-top: 20px;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 10px 0;
+    padding: 10px 0; /* Vertical padding */
+    padding-left: 20px; /* Added left padding */
     box-sizing: border-box;
     scrollbar-width: thin;
 }
@@ -34,12 +41,13 @@
     flex: 0 0 auto;
     width: 150px;
     background: #fff;
-    border-radius: 0;
-    padding: 0;
+    border-radius: 5px; /* Add slight rounding for aesthetics */
+    padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-right: 10px; /* Space between items */
 }
 
 .product-item:hover {
@@ -49,7 +57,7 @@
 .product-item img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 5px; /* Ensure images have rounded corners */
     margin-bottom: 0;
 }
 
