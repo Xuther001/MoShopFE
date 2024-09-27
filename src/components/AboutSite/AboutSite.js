@@ -49,14 +49,15 @@ const AboutSite = () => {
       <h2>Address Management</h2>
       <ul>
         <li>Users can view or change their address.</li>
-        <li>Any changes to the address will be displayed immediately without a page refresh.</li>
+        <li>Any changes to the address will be displayed immediately without a manual page refresh.</li>
       </ul>
       <h2>Product Interaction</h2>
       <ul>
         <li>Clicking on a product will display the product details screen.</li>
         <li>Users can click Add to Cart to add the product with the specified quantity to My Cart.</li>
         <li>Upon addition, the product's stock on hand will be reduced on the backend to reflect the item being held in the cart.</li>
-        <li>If the user has previously purchased the product, they will have the option to post a review.</li>
+        <li>If the user has previously purchased the product, they will automatically have the option to post a review.</li>
+        <li>Users who have already reviewed a product will not have the option to review it again.</li>
         <li>Submitted reviews will appear immediately under the Customer Reviews section.</li>
       </ul>
     </div>
