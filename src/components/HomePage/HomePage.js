@@ -10,6 +10,12 @@ function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const isMobile = /Mobi|Android/i.test(window.navigator.userAgent);
+    if (isMobile) {
+      window.location.href = 'http://moshopfemobile.s3-website-us-west-2.amazonaws.com/';
+      return;
+    }
+
     const token = localStorage.getItem('token');
     const storedUsername = localStorage.getItem('username');
     if (token && storedUsername) {
