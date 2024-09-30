@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
 import Register from './components/UserRegistration/Register';
@@ -11,6 +11,24 @@ import ResetPassword from './components/ResetPassword/ResetPassword';
 import AboutSite from './components/AboutSite/AboutSite';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const isMobile = /Mobi|Android/i.test(window.navigator.userAgent);
+    
+    if (isMobile) {
+      // Redirect to mobile site
+      window.location.href = 'http://moshopfemobile.s3-website-us-west-2.amazonaws.com/';
+    } else {
+      setLoading(false); // Set loading to false if not mobile
+    }
+  }, []);
+
+  // Show a loading message while checking for mobile
+  if (loading) {
+    return <div>Loading...</div>; // Without this, users will still see some contents before being redirected
+  }
+
   return (
     <Router>
       <Routes>
