@@ -49,6 +49,7 @@ const Eyewear = () => {
             onClick={() => handleProductClick(product.id)}
           >
             <img src={product.imageUrl} alt={product.name} className="product-image" />
+            <h2>{product.name}</h2>
           </div>
         ))}
       </div>
