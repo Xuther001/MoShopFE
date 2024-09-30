@@ -98,49 +98,59 @@ const ProductDetails = ({ productId, onClose }) => {
   return (
     <div className="product-details">
       <button className="close-button" onClick={onClose}>Close</button>
-      <h2>{product.name}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p className={product.stock <= 100 ? "low-stock" : ""}>
-        Stock: {product.stock} <span className="left-text">left</span>
-      </p>
+      
+      {/* Flex container for image and description */}
+      <div className="product-info">
+        {/* Product Image Display */}
+        <img src={product.imageUrl} alt={product.name} className="product-image" />
+        
+        {/* Product Description */}
+        <div className="product-description">
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <p className={product.stock <= 100 ? "low-stock" : ""}>
+            Stock: {product.stock} <span className="left-text">left</span>
+          </p>
 
-      <div className="quantity-selector">
-        <label htmlFor="quantity">Quantity:</label>
-        <input
-          type="number"
-          id="quantity"
-          name="quantity"
-          value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
-          min="1"
-          max={product.stock}
-        />
-      </div>
+          <div className="quantity-selector">
+            <label htmlFor="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              value={quantity}
+              onChange={(e) => setQuantity(parseInt(e.target.value))}
+              min="1"
+              max={product.stock}
+            />
+          </div>
 
-      <button onClick={handleAddToCart} className="add-to-cart-btn">Add to Cart</button>
+          <button onClick={handleAddToCart} className="add-to-cart-btn">Add to Cart</button>
 
-      {canReview && !hasReviewed && (
-        <div className="review-prompt">
-          <p>You have purchased this item. If you want, you can leave a review below:</p>
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            handleReviewSubmit({
-              productId,
-              username,
-              rating: rating,
-              comment: e.target.comment.value
-            });
-          }}>
-            <StarRating rating={rating} setRating={setRating} hoverRating={hoverRating} setHoverRating={setHoverRating} />
-            <label>Comment:</label>
-            <textarea name="comment" required></textarea>
-            <button type="submit">Submit Review</button>
-          </form>
+          {canReview && !hasReviewed && (
+            <div className="review-prompt">
+              <p>You have purchased this item. If you want, you can leave a review below:</p>
+              <form onSubmit={(e) => {
+                e.preventDefault();
+                handleReviewSubmit({
+                  productId,
+                  username,
+                  rating: rating,
+                  comment: e.target.comment.value
+                });
+              }}>
+                <StarRating rating={rating} setRating={setRating} hoverRating={hoverRating} setHoverRating={setHoverRating} />
+                <label>Comment:</label>
+                <textarea name="comment" required></textarea>
+                <button type="submit">Submit Review</button>
+              </form>
+            </div>
+          )}
+
+          {hasReviewed && <p>You have already reviewed this item.</p>}
         </div>
-      )}
-
-      {hasReviewed && <p>You have already reviewed this item.</p>}
+      </div>
 
       <div className="reviews-section">
         <h3>Customer Reviews</h3>
