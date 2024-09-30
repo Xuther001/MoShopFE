@@ -16,7 +16,9 @@ const Footwear = () => {
         const response = await axios.get('/api/products');
         const filteredProducts = response.data.filter(product => product.category.id === 11);
         const sortedProducts = filteredProducts.sort((a, b) => a.id - b.id);
-        setProducts(sortedProducts);
+        
+        const randomProducts = getRandomProducts(sortedProducts, 6);
+        setProducts(randomProducts);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -26,6 +28,11 @@ const Footwear = () => {
 
     fetchProducts();
   }, []);
+
+  const getRandomProducts = (productsArray, count) => {
+    const shuffled = productsArray.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
 
   const handleProductClick = (id) => {
     setSelectedProductId(id);
@@ -40,9 +47,6 @@ const Footwear = () => {
 
   return (
     <div className="footwear-container">
-      <div className="scroll-button left" onClick={() => productListRef.current.scrollBy({ left: -200, behavior: 'smooth' })} aria-label="Scroll left">
-        &#9664;
-      </div>
       <div className="product-list" ref={productListRef}>
         {products.map((product) => (
           <div
@@ -54,9 +58,6 @@ const Footwear = () => {
             <h2>{product.name}</h2>
           </div>
         ))}
-      </div>
-      <div className="scroll-button right" onClick={() => productListRef.current.scrollBy({ left: 200, behavior: 'smooth' })} aria-label="Scroll right">
-        &#9654;
       </div>
 
       {selectedProductId && (

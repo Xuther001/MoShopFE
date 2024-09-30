@@ -1,99 +1,86 @@
 .home-page {
-  position: relative;
-  padding: 10px;
-  overflow-x: hidden;
-}
-
-.auth-buttons {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   display: flex;
-  gap: 10px;
-  z-index: 1000;
+  flex-direction: column;
   align-items: center;
 }
 
-.button {
-  display: inline-flex;
-  justify-content: center;
+.header {
+  width: 100%;
+}
+
+.site-title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.nav-strip {
+  background-color: navy;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  padding: 10px 15px;
-  background-color: #4CAF50;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.nav-link {
   color: white;
   text-decoration: none;
+  padding: 10px 20px;
   border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  min-width: 120px;
+  transition: background-color 0.3s ease;
 }
 
-.logout-button {
-  background-color: #d32f2f;
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.mycart-button,
-.myinvoice-button,
-.myprofile-button {
-  background-color: #008CBA;
-}
-
-.button:hover {
-  background-color: #45a049;
-}
-
-.logout-button:hover {
-  background-color: #f44336;
-}
-
-.mycart-button:hover,
-.myinvoice-button:hover,
-.myprofile-button:hover {
-  background-color: #005f75;
-}
-
-.clothing-component,
-.footwear-component {
+.product-section {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
+  width: 100%;
 }
 
-.footwear-item {
-  flex: 1 1 30%;
-  margin: 10px;
-  min-width: 200px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.product-list-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.product-item {
+  flex: 0 0 auto;
+  width: 150px;
+  margin-right: 10px;
+  background: #fff;
   border-radius: 5px;
-  overflow: hidden;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-item:last-child {
+  margin-right: 0;
 }
 
 @media (max-width: 768px) {
-  .home-page {
-    padding: 5px;
-  }
-
-  .button {
-    font-size: 12px;
-    padding: 8px 12px;
-    min-width: 100px;
-  }
-
-  .footwear-item {
-    flex: 1 1 45%;
+  .product-item {
+      width: 120px;
   }
 }
 
-@media (max-width: 480px) {
-  .button {
-    font-size: 10px;
-    padding: 6px 10px;
-    min-width: 80px;
-  }
-
-  .footwear-item {
-    flex: 1 1 100%;
+@media (max-width: 576px) {
+  .product-item {
+      width: 100px;
   }
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../configs/axiosConfig';
 import ProductDetails from '../ProductDetails/ProductDetails';
-import './Clothing.css';
+import './Eyewear.css';
 
-const Clothing = () => {
+const Eyewear = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -12,7 +12,7 @@ const Clothing = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('/api/products');
-        const filteredProducts = response.data.filter(product => product.category.id === 2);
+        const filteredProducts = response.data.filter(product => product.category.id === 21);
 
         const randomProducts = getRandomProducts(filteredProducts, 6);
         setProducts(randomProducts);
@@ -40,7 +40,7 @@ const Clothing = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="product-list-container">
+    <div className="eyewear-container">
       <div className="product-list">
         {products.map((product) => (
           <div
@@ -49,7 +49,6 @@ const Clothing = () => {
             onClick={() => handleProductClick(product.id)}
           >
             <img src={product.imageUrl} alt={product.name} className="product-image" />
-            <h2>{product.name}</h2>
           </div>
         ))}
       </div>
@@ -61,4 +60,4 @@ const Clothing = () => {
   );
 };
 
-export default Clothing;
+export default Eyewear;

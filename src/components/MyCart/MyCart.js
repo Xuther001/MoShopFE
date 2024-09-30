@@ -160,7 +160,7 @@ function MyCart() {
       ) : (
         <p className="empty-cart-message">Your cart is empty.</p>
       )}
-      <Link to="/" className="home-page-button">Home Page</Link> {/* Home Page button */}
+      <Link to="/" className="home-page-button">Home Page</Link>
     </div>
   );
 }
