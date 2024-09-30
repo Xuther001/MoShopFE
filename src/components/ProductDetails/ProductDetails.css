@@ -5,10 +5,9 @@
   border-radius: 5px;
   position: fixed;
   top: 20%;
-  left: 50%;
   transform: translate(-50%, -20%);
   z-index: 1000;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: auto;
@@ -125,4 +124,21 @@
 
 .add-review-form button:hover {
   background-color: #45a049;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-selector label {
+  margin-right: 5px; /* Adjust spacing between label and input */
+  font-size: 14px;   /* Decrease label font size */
+}
+
+.quantity-selector input {
+  width: 50px;       /* Reduce width of the input */
+  padding: 5px;      /* Decrease padding for a smaller input */
+  font-size: 14px;   /* Decrease font size */
 }
