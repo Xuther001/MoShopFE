@@ -133,12 +133,12 @@
 }
 
 .quantity-selector label {
-  margin-right: 5px; /* Adjust spacing between label and input */
-  font-size: 14px;   /* Decrease label font size */
+  margin-right: 5px;
+  font-size: 14px;
 }
 
 .quantity-selector input {
-  width: 50px;       /* Reduce width of the input */
-  padding: 5px;      /* Decrease padding for a smaller input */
-  font-size: 14px;   /* Decrease font size */
+  width: 50px;
+  padding: 5px;
+  font-size: 14px;
 }

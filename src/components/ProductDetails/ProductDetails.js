@@ -11,7 +11,7 @@ const ProductDetails = ({ productId, onClose }) => {
   const [canReview, setCanReview] = useState(false);
   const [hasReviewed, setHasReviewed] = useState(false);
   const [rating, setRating] = useState(0);
-  const [hoverRating, setHoverRating] = useState(0); // Track hover state
+  const [hoverRating, setHoverRating] = useState(0);
   const username = localStorage.getItem('username');
   const token = localStorage.getItem('token');
 
@@ -99,12 +99,9 @@ const ProductDetails = ({ productId, onClose }) => {
     <div className="product-details">
       <button className="close-button" onClick={onClose}>Close</button>
       
-      {/* Flex container for image and description */}
       <div className="product-info">
-        {/* Product Image Display */}
         <img src={product.imageUrl} alt={product.name} className="product-image" />
         
-        {/* Product Description */}
         <div className="product-description">
           <h2>{product.name}</h2>
           <p>{product.description}</p>
