@@ -9,6 +9,7 @@ const AboutSite = () => {
       <ul>
         <li><strong>Device Detection:</strong> The website will automatically detect whether the user is on a stationary device (desktop) or a mobile device.</li>
         <li>If the user is on a mobile device, they will be redirected to a mobile-friendly version of the website.</li>
+        <li>For the best experience, I recommend using a desktop to navigate the website. While the mobile version is optimized for the Samsung S9, layouts may vary on other devices. At this time, I do not plan to continuously update the web app to accommodate the wide range of new phone screens and specifications being released.</li>
         <li><strong>Home Screen Navigation:</strong> Upon accessing the website, users will be taken to the home screen after device detection.</li>
         <li>The home screen will feature Login and Sign Up buttons.</li>
         <li>After logging in, the user will see different buttons dynamically without refreshing the page for an enhanced user experience.</li>
