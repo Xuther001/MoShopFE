@@ -47,8 +47,7 @@ INSERT INTO categories (name, description) VALUES
 ('Eyewear', 'A collection of stylish and functional glasses, including prescription eyewear, sunglasses, and protective lenses for fashion and vision care.');
 </code></pre>
 
-Then, insert the products:
-
+#(Optional) Below are pre-made products which you can inject.<br>
 <pre><code>
 INSERT INTO products (category_id, name, image_url, description, stock, price) VALUES
 (21, 'Ray-Ban Aviator Classic', 'https://i.imgur.com/PW4PQaY.jpeg', 'Ray-Ban''s Aviator Classic sunglasses are a timeless model originally designed for U.S. aviators in 1937...', 50, 150.00),
